@@ -7,13 +7,13 @@ const port = 3000
 const DB = 'mongodb+srv://rohit:7IDrvLbfTJJcunUp@cluster0.prkjs37.mongodb.net/MERNSTACKOFFCIAL?retryWrites=true&w=majority'
 
 mongoose.connect(DB, {
-    useNewUrlParser: true,
     useCreateIndex: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+    useFindAndModify: false,
 }).then(() => {
     console.log(`Connection Successful`);
-}).catch((err) => console.log(`no connection`));
+}).catch((err) => console.log(err));
 
 //Middleware 
 const Middleware = (req, res, next) => {
