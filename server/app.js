@@ -1,6 +1,6 @@
-const dotenv = require('dotenv')
-const express = require('express')
-const mongoose = require('mongoose')
+const dotenv = require('dotenv') // npm i dotenv
+const express = require('express') // npm i express
+const mongoose = require('mongoose') // npm i mongoose
 const app = express()
 // const port = 3000
 
