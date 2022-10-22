@@ -1,11 +1,18 @@
+const dotenv = require('dotenv')
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const port = 3000
 
 //Mondo DB SSH key
-// password and username must be alphabate special words must be need decode
-const DB = 'mongodb+srv://rohit:webxgrafix@cluster0.prkjs37.mongodb.net/MERNSTACKOFFCIAL?retryWrites=true&w=majority'
+// password and username must be alphabate because special words must be need decode
+
+// NOT RECOMMENDED FOR SECURITY PURPOSE
+// const DB = 'mongodb+srv://rohit:XXXXXXX@cluster0.prkjs37.mongodb.net/MERNSTACKOFFCIAL?retryWrites=true&w=majority'
+
+dotenv.config({ path: './config.env' })
+
+const DB = process.env.DATABASE;
 
 // MongoDB connect
 mongoose.connect(DB, {
