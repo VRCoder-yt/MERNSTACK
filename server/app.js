@@ -13,6 +13,11 @@ const app = express()
 dotenv.config({ path: './config.env' })
 require('./db/conn') // require conn.js from db
 
+// const user = require('./model/userSchema')
+
+// we link the router file to make our route easy
+app.use(require('./router/auth'))
+
 const PORT = process.env.PORT;
 
 // // MongoDB connect
@@ -32,9 +37,9 @@ const Middleware = (req, res, next) => {
     next();
 }
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+//app.get('/', (req, res) => {
+//    res.send('Hello World from server app.js!')
+//})
 
 app.get('/about', (req, res) => {
     res.send('About us!')
