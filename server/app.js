@@ -2,7 +2,7 @@ const dotenv = require('dotenv')
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
-const port = 3000
+// const port = 3000
 
 //Mondo DB SSH key
 // password and username must be alphabate because special words must be need decode
@@ -11,19 +11,20 @@ const port = 3000
 // const DB = 'mongodb+srv://rohit:XXXXXXX@cluster0.prkjs37.mongodb.net/MERNSTACKOFFCIAL?retryWrites=true&w=majority'
 
 dotenv.config({ path: './config.env' })
+require('./db/conn') // require conn.js from db
 
-const DB = process.env.DATABASE;
+const PORT = process.env.PORT;
 
-// MongoDB connect
-mongoose.connect(DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    // useCreateIndex: true,
-    // useFindAndModify: false,
-}).then(() => {
-    console.log(`Connection Successful`);
-}).catch((err) => console.log(err));
-// MongoDB Connected
+// // MongoDB connect
+// mongoose.connect(DB, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     // useCreateIndex: true,
+//     // useFindAndModify: false,
+// }).then(() => {
+//     console.log(`Connection Successful`);
+// }).catch((err) => console.log(err));
+// // MongoDB Connected
 
 //Middleware 
 const Middleware = (req, res, next) => {
@@ -48,6 +49,6 @@ app.get('/login', Middleware, (req, res) => { // usingf middleware commonly in l
     res.send('login!')
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
 })
