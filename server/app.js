@@ -18,8 +18,6 @@ mongoose.connect(DB, {
 }).catch((err) => console.log(err));
 // MongoDB Connected
 
-
-
 //Middleware 
 const Middleware = (req, res, next) => {
     console.log(`Hello My middlwware`);
