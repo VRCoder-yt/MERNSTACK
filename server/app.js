@@ -4,16 +4,21 @@ const app = express()
 const port = 3000
 
 //Mondo DB SSH key
-const DB = 'mongodb+srv://rohit:7IDrvLbfTJJcunUp@cluster0.prkjs37.mongodb.net/MERNSTACKOFFCIAL?retryWrites=true&w=majority'
+// password and username must be alphabate special words must be need decode
+const DB = 'mongodb+srv://rohit:webxgrafix@cluster0.prkjs37.mongodb.net/MERNSTACKOFFCIAL?retryWrites=true&w=majority'
 
+// MongoDB connect
 mongoose.connect(DB, {
-    useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
+    // useCreateIndex: true,
+    // useFindAndModify: false,
 }).then(() => {
     console.log(`Connection Successful`);
 }).catch((err) => console.log(err));
+// MongoDB Connected
+
+
 
 //Middleware 
 const Middleware = (req, res, next) => {
