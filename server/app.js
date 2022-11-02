@@ -13,6 +13,8 @@ const app = express()
 dotenv.config({ path: './config.env' })
 require('./db/conn') // require conn.js from db
 
+app.use(express.json())
+
 // const user = require('./model/userSchema')
 
 // we link the router file to make our route easy
