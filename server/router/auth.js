@@ -40,7 +40,9 @@ router.post('/register', (req, res) => {
 
 */
 
-/* ---- using async / await ----- */
+
+// Register route
+/* ---- using async-await ----- */
 
 router.post('/register', async (req, res) => {
     // console.log(req.body)
@@ -72,6 +74,18 @@ router.post('/register', async (req, res) => {
     } catch (err) {
         console.log(err)
     }
+
+})
+
+// login route
+router.post('/singin', (req, res) => {
+//    console.log(req.body)
+//    res.json({message:"awsome"})
+try {
+
+} catch (err) {
+    console.log(err)
+}
 
 })
 module.exports = router
