@@ -1,8 +1,9 @@
 const express = require('express')
+const user = require("../model/userSchema")
 const router = express.Router()
 
 require("../db/conn")
-const user = require("../model/userSchema")
+const User = require("../model/userSchema")
 
 router.get('/', (req, res) => {
     res.send(`Hello world from server router.js`)
@@ -53,7 +54,7 @@ router.post('/register', async (req, res) => {
 
     try {
 
-        const userExist = await user.findOne({ email: email })
+        const userExist = await User.findOne({ email: email })
 
         if (userExist) {
             return res.status(442).json({ error: "user already exist please fill properly" })
